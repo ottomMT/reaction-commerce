@@ -7,12 +7,15 @@ reaction:
   environment:
     ROOT_URL: "http://rc.noionlabs.com"
     MONGO_URL: "mongodb://react.api.svc.00fd7aa6-d8a6-4d29-d54e-d3831560acf8.us-east-1.cns.joyent.com:27017/reaction"
+    REACTION_EMAIL: "test@test.com"
+    REACTION_USER: "admin"
+    REACTION_AUTH: "password"
   labels:
     com.joyent.package: g4-highcpu-128M
     triton.cns.services: react.host
 
 mongo:
-  image: mongo:latest
+  image: mongo:3.0
   command: mongod --storageEngine=wiredTiger
   labels:
     com.joyent.package: g4-highcpu-128M
