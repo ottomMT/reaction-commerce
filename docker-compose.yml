@@ -4,7 +4,7 @@ reaction:
     - "3000:3000"
   environment:
     ROOT_URL: "http://rc.noionlabs.com"
-    MONGO_URL: "mongodb://rc.db.svc.5c9d7846-2256-c131-8d57-8f06c078f2ad.us-sw-1.cns.joyent.com:27017/reaction"
+    MONGO_URL: "mongodb://rc.db.svc.5c9d7846-2256-c131-8d57-8f06c078f2ad.us-east-1.cns.joyent.com:27017/reaction"
     REACTION_EMAIL: "test@test.com"
     REACTION_USER: "admin"
     REACTION_AUTH: "password"
