@@ -11,11 +11,11 @@ reaction:
     REACTION_USER: "admin"
     REACTION_AUTH: "password"
   labels:
-    com.joyent.package: g4-highcpu-128M
+    com.joyent.package: g4-highcpu-512M
     triton.cns.services: react.host
 
 mongo:
-  image: mongo:3.0
+  image: mongo:latest
   command: mongod --storageEngine=wiredTiger
   labels:
     com.joyent.package: g4-highcpu-128M
