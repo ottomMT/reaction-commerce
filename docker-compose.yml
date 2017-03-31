@@ -1,32 +1,30 @@
 reaction:
   image: reactioncommerce/reaction:latest
-  links:
-    - mongo
   ports:
     - "3000:3000"
   environment:
     ROOT_URL: "http://rc.noionlabs.com"
-    MONGO_URL: "mongodb://react.api.svc.00fd7aa6-d8a6-4d29-d54e-d3831560acf8.us-east-1.cns.joyent.com:27017/reaction"
+    MONGO_URL: "mongodb://rc.db.svc.5c9d7846-2256-c131-8d57-8f06c078f2ad.us-sw-1.cns.joyent.com:27017/reaction"
     REACTION_EMAIL: "test@test.com"
     REACTION_USER: "admin"
     REACTION_AUTH: "password"
   labels:
     com.joyent.package: g4-highcpu-512M
-    triton.cns.services: react.host
+    triton.cns.services: rc.rc
 
 mongo:
   image: mongo:latest
   command: mongod --storageEngine=wiredTiger
   labels:
     com.joyent.package: g4-highcpu-128M
-    triton.cns.services: react.api
+    triton.cns.services: rc.db
 
 proxy:
   build: .
-  dockerfile: ./.reaction/nginx/Dockerfile
+  dockerfile: ./dockerfiles/nginx/Dockerfile
   restart: always
   ports:
     - "80:80"
   labels:
     com.joyent.package: g4-highcpu-128M
-    triton.cns.services: react.website
+    triton.cns.services: rc.proxy
