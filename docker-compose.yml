@@ -1,5 +1,6 @@
 reaction:
   image: reactioncommerce/reaction:latest
+  restart: always
   ports:
     - "3000:3000"
   environment:
@@ -14,6 +15,7 @@ reaction:
 
 mongo:
   image: mongo:latest
+  restart: always
   command: mongod --storageEngine=wiredTiger
   labels:
     com.joyent.package: g4-highcpu-128M
