@@ -22,8 +22,7 @@ mongo:
     triton.cns.services: rc.db
 
 proxy:
-  build: .
-  dockerfile: ./dockerfiles/nginx/Dockerfile
+  build: dockerfiles/nginx
   restart: always
   ports:
     - "80:80"
